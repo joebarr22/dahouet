@@ -13,7 +13,7 @@ public class Personne {
 	
 	protected String nom;
 	protected String mail;
-	protected String prénom;
+	protected String prenom;
 	
 	
 	public Personne(){
@@ -27,7 +27,7 @@ public class Personne {
 	
 	this.nom = nom;
 	this.mail = mail;
-	this.prénom = prénom;
+	this.prenom = prénom;
 	
 	}
 	
@@ -48,11 +48,11 @@ public void setMail(String mail) {
 }
 
 public String getPrénom() {
-	return prénom;
+	return prenom;
 }
 
 public void setPrénom(String prénom) {
-	this.prénom = prénom;
+	this.prenom = prénom;
 }
 
 
@@ -60,7 +60,7 @@ public void affichage()
 {
 	System.out.println("nom"+" "+nom);
 	System.out.println("mail"+" "+mail);
-	System.out.println("prénom"+" "+prénom);
+	System.out.println("prénom"+" "+prenom);
 }
 
 
