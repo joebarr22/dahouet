@@ -1,13 +1,16 @@
-package métiers;
+package com.david.projet_dahouet.model;
+
+import java.util.Date;
 
 
-public class Licencié extends Personne{
+
+public class Licencie extends Personne{
 	
 	private int numéroLicence;
 	private double pointsFFV;
 	private String dateNaissance;
 	
-	public Licencié(String nom, String mail, String prénom, int numéroLicence,
+	public Licencie(String nom, String mail, String prénom, int numéroLicence,
 			double pointsFFV, String datenaissance, String dateNaissance){
 	
 	this.numéroLicence = numéroLicence;
@@ -16,6 +19,11 @@ public class Licencié extends Personne{
 	
 	}
 	
+	public Licencie(String nom, String mail, String prénom, int numéroLicence2,
+			double pointsFFV2, Date parse, int i) {
+		// TODO Auto-generated constructor stub
+	}
+
 	public void affichage(){
 		super.affichage();
 		System.out.println("Numéro de licence" + numéroLicence);

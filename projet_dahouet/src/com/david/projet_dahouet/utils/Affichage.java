@@ -5,9 +5,9 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import com.david.projet_dahouet.metiers.Commissaire;
-import com.david.projet_dahouet.metiers.Licencie;
-import com.david.projet_dahouet.metiers.Proprietaire;
+import com.david.projet_dahouet.model.Commissaire;
+import com.david.projet_dahouet.model.Licencie;
+import com.david.projet_dahouet.model.Proprietaire;
 
 public class Affichage {
 

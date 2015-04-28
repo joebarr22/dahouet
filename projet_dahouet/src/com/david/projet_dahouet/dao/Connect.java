@@ -21,7 +21,7 @@ public static Connection  cConnect ()
 	    	  Class.forName("com.mysql.jdbc.Driver").newInstance();
 	
 	        // 
-	    	  conn=  DriverManager.getConnection(URL,"root","");
+	    	  conn=  DriverManager.getConnection(URL,"dahouet_user","mattias");
 	      }
 	        catch(SQLException sqlE)
 	        {

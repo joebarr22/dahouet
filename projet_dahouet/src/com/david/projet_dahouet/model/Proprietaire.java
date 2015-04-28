@@ -1,4 +1,4 @@
-package com.david.projet_dahouet.metiers;
+package com.david.projet_dahouet.model;
 
 
 
@@ -21,7 +21,7 @@ public class Proprietaire extends Personne {
 		super.affichage();
 		System.out.println("nom" + nom);
 		System.out.println("mail" + mail);
-		System.out.println("prénom" + prenom);
+		System.out.println("prénom" + prénom);
 		System.out.println("téléphone" + téléphone);
 		System.out.println("adresse" + adresse);
 		

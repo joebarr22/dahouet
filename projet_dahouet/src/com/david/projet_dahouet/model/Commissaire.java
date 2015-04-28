@@ -1,4 +1,5 @@
-package métiers;
+package com.david.projet_dahouet.model;
+
 
 
 public class Commissaire extends Personne {

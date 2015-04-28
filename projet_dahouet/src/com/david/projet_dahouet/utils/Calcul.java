@@ -1,5 +1,6 @@
 package com.david.projet_dahouet.utils;
-import com.david.projet_dahouet.metiers.Licencie;
+import com.david.projet_dahouet.model.Licencie;
+
 import org.joda.time.Period;
 
 import java.util.Calendar;
@@ -8,7 +9,7 @@ import java.util.Date;
 
 
 
-public class Calculs {
+public class Calcul {
 	
 	// Calcule de l'âge en utilisant le Framework JodaTime
 		public static int calculAge(Date dateNaissance) {
@@ -28,7 +29,7 @@ public class Calculs {
 				Licencie calcul) {
 
 			String result = null;
-			int yearLicence = (currentAnnee - calcul.getAnneeLicence());
+			int yearLicence = (currentAnnee - Calcul.getAnneeLicence());
 			if (yearLicence == 0) {
 				double FFV = calcul.getPointsFFV();
 				double r = new Double(FFV + pts);

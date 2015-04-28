@@ -1,4 +1,4 @@
-package métiers;
+package com.david.projet_dahouet.model;
 
 public class Personne {
 

@@ -1,6 +1,6 @@
 package com.david.projet_dahouet;
 
-import com.david.projet_dahouet.metiers.Personne;
+import com.david.projet_dahouet.model.Personne;
 import com.david.projet_dahouet.utils.Controls;
 import com.david.projet_dahouet.utils.Lire;
 
