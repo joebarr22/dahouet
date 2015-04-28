@@ -19,13 +19,13 @@ public class AppDahouet {
 			System.out.println("Veuillez saisir une adresse Email: ");
 			String email = Lire.S();
 			
-			Boolean validemail = Controls.isValidEMail(email);
+			boolean validemail = Controls.isValidEMail(email);
 			
-			if (validemail = true);
-			System.out.println("Adresse email valide");
+			if (validemail == true){
+			System.out.println("Adresse email valide");}
 			
-			else if (validemail = false);
-			System.out.println("Adresse email invalide");
+			else {
+			System.out.println("Adresse email invalide");}
 		
 			
 		}
