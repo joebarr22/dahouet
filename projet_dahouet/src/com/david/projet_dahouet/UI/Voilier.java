@@ -1,4 +1,4 @@
-package com.david.projet_dahouet.ihm;
+package com.david.projet_dahouet.UI;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
