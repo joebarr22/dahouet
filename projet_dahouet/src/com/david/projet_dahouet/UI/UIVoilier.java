@@ -10,7 +10,7 @@ import java.awt.Label;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-public class Voilier extends JFrame {
+public class UIVoilier extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textField;
@@ -25,7 +25,7 @@ public class Voilier extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Voilier frame = new Voilier();
+					UIVoilier frame = new UIVoilier();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -37,7 +37,7 @@ public class Voilier extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Voilier() {
+	public UIVoilier() {
 		setTitle("Enregistrement d'un voilier");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
