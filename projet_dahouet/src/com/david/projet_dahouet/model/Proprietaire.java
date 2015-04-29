@@ -8,15 +8,18 @@ public class Proprietaire extends Personne {
 	private String adresse;
 	
 	
-	public Proprietaire(String nom, String mail, String prénom,String téléphone, String adresse){
-		
-		
-		super(nom, mail, prénom, téléphone, adresse);
-		
+	
+	
+	
+
+
+	public Proprietaire(String nom, String mail, String prénom,
+			String téléphone, String adresse) {
+		super(nom, mail, prénom);
 		this.téléphone = téléphone;
 		this.adresse = adresse;
 	}
-	
+
 	public void affichage(){
 		super.affichage();
 		System.out.println("nom" + nom);

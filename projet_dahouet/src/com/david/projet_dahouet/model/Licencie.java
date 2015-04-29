@@ -8,22 +8,19 @@ public class Licencie extends Personne{
 	
 	private int numéroLicence;
 	private double pointsFFV;
-	private String dateNaissance;
+	private Date dateNaissance;
+	private int anneeLicence;
 	
-	public Licencie(String nom, String mail, String prénom, int numéroLicence,
-			double pointsFFV, String datenaissance, String dateNaissance){
 	
-	this.numéroLicence = numéroLicence;
-	this.pointsFFV = pointsFFV;
-	this.dateNaissance = dateNaissance;
-	
-	}
-	
-	public Licencie(String nom, String mail, String prénom, int numéroLicence2,
-			double pointsFFV2, Date parse, int i) {
-		// TODO Auto-generated constructor stub
-	}
 
+	public Licencie(String nom, String mail, String prénom, int numéroLicence,
+			double pointsFFV, Date dateNaissance, int anneeLicence) {
+		super(nom, mail, prénom);
+		this.numéroLicence = numéroLicence;
+		this.pointsFFV = pointsFFV;
+		this.dateNaissance = dateNaissance;
+		this.anneeLicence = anneeLicence;
+	}
 	public void affichage(){
 		super.affichage();
 		System.out.println("Numéro de licence" + numéroLicence);
@@ -47,12 +44,18 @@ public class Licencie extends Personne{
 		this.pointsFFV = pointsFFV;
 	}
 
-	public String getDateNaissance() {
+	public Date getDateNaissance() {
 		return dateNaissance;
 	}
 
-	public void setDateNaissance(String dateNaissance) {
+	public void setDateNaissance(Date dateNaissance) {
 		this.dateNaissance = dateNaissance;
+	}
+	public int getAnneeLicence() {
+		return anneeLicence;
+	}
+	public void setAnneeLicence(int anneeLicence) {
+		this.anneeLicence = anneeLicence;
 	}
 
 	

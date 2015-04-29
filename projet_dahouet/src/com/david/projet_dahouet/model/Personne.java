@@ -12,12 +12,18 @@ public class Personne {
 		
 	}
 	
-public Personne(String nom,String mail, String prénom, String téléphone, String adresse){
-	super();
-	this.nom = nom;
-	this.mail = mail;
-	this.prénom = prénom;
-}
+
+
+
+public Personne(String nom, String mail, String prénom) {
+		super();
+		this.nom = nom;
+		this.mail = mail;
+		this.prénom = prénom;
+	}
+
+
+
 
 public String getNom() {
 	return nom;

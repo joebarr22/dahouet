@@ -19,7 +19,7 @@ public class Affichage {
 		  
 		  Licencie test=null;
 		  try {
-		   test = new Licencie("Patageul", "Jem@Patageul.net", "Jem", 1580, 230.8, datnais.parse(birthday), 2015);
+		   test = new Licencie("Patageul", "Jem@Patageul.net", "Jem", 1580, 230.8,datnais.parse(birthday), 2015);
 		  } catch (ParseException e) {
 		   // TODO Auto-generated catch block
 		   e.printStackTrace();

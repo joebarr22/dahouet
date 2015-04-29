@@ -26,12 +26,12 @@ public class Calcul {
 		
 		// Calcul des points suivant le cahier des charges
 		public static String calculPoints(double pts, int currentAnnee,
-				Licencie calcul) {
+				Licencie ducon) {
 
 			String result = null;
-			int yearLicence = (currentAnnee - Calcul.getAnneeLicence());
+			int yearLicence = (currentAnnee - ducon.getAnneeLicence());
 			if (yearLicence == 0) {
-				double FFV = calcul.getPointsFFV();
+				double FFV = ducon.getPointsFFV();
 				double r = new Double(FFV + pts);
 				result = String.valueOf(r);
 			} else
