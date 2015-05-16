@@ -9,8 +9,11 @@ public class Commissaire extends Personne {
 	
 	
 	
-	public Commissaire(String nom, String mail, String prénom, String comité) {
-		super(nom, mail, prénom);
+	
+
+	public Commissaire(int id, String nom, String mail, String prénom,
+			String comité) {
+		super(id, nom, mail, prénom);
 		this.comité = comité;
 	}
 

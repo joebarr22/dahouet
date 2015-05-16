@@ -4,21 +4,21 @@ package com.david.projet_dahouet.model;
 
 public class Proprietaire extends Personne {
 	
-	private String téléphone;
+	private long téléphone;
 	private String adresse;
 	
 	
 	
 	
-	
 
-
-	public Proprietaire(String nom, String mail, String prénom,
-			String téléphone, String adresse) {
-		super(nom, mail, prénom);
+	public Proprietaire(int id, String nom, String mail, String prénom,
+			long téléphone, String adresse) {
+		super(id, nom, mail, prénom);
 		this.téléphone = téléphone;
 		this.adresse = adresse;
 	}
+
+	
 
 	public void affichage(){
 		super.affichage();
@@ -31,11 +31,11 @@ public class Proprietaire extends Personne {
 		
 }
 
-	public String getTéléphone() {
+	public long getTéléphone() {
 		return téléphone;
 	}
 
-	public void setTéléphone(String téléphone) {
+	public void setTéléphone(long téléphone) {
 		this.téléphone = téléphone;
 	}
 

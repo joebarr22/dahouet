@@ -7,7 +7,7 @@ import java.sql.SQLException;
 public class Connect {
 	private static Connection conn =null;
 
-	 final static String URL = "jdbc:mysql://localhost/projet_dahouet?noAccessToProcedureBodies=true";
+	 final static String URL = "jdbc:mysql://localhost/dahouet?noAccessToProcedureBodies=true";
    /**
     * 
     * @return RunTimeException() if any pb

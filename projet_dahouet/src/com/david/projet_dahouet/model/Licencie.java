@@ -13,9 +13,11 @@ public class Licencie extends Personne{
 	
 	
 
-	public Licencie(String nom, String mail, String prénom, int numéroLicence,
-			double pointsFFV, Date dateNaissance, int anneeLicence) {
-		super(nom, mail, prénom);
+	
+	public Licencie(int id, String nom, String mail, String prénom,
+			int numéroLicence, double pointsFFV, Date dateNaissance,
+			int anneeLicence) {
+		super(id, nom, mail, prénom);
 		this.numéroLicence = numéroLicence;
 		this.pointsFFV = pointsFFV;
 		this.dateNaissance = dateNaissance;

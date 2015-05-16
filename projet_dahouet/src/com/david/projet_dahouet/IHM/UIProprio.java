@@ -2,6 +2,8 @@ package com.david.projet_dahouet.IHM;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 import javax.swing.JFrame;
@@ -14,6 +16,7 @@ import javax.swing.JComboBox;
 
 import com.david.projet_dahouet.controller.Controller;
 import com.david.projet_dahouet.model.Club;
+import com.david.projet_dahouet.model.Proprietaire;
 
 public class UIProprio extends JFrame {
 
@@ -24,7 +27,7 @@ public class UIProprio extends JFrame {
 	private JTextField textField_3;
 	private JTextField textField_4;
 	private JComboBox<Club> comboBox;
-
+	private JButton btnOk ;
 	
 	public UIProprio() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -59,9 +62,20 @@ public class UIProprio extends JFrame {
 		lblMail.setBounds(10, 243, 46, 14);
 		contentPane.add(lblMail);
 		
-		JButton btnOk = new JButton("OK");
+		btnOk = new JButton("OK");
 		btnOk.setBounds(107, 322, 89, 23);
 		contentPane.add(btnOk);
+		btnOk.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				Proprietaire proprio =  new Proprietaire(0, textField.getText(), textField_4.getText(), textField_1.getText(), 
+						Long.parseLong(textField_3.getText()), textField_2.getText());
+				Club club = (Club) comboBox.getSelectedItem(); 
+				control.createProprio(proprio,club);
+			}
+		});
 		
 		JButton btnCancel = new JButton("Cancel");
 		btnCancel.setBounds(306, 322, 89, 23);
