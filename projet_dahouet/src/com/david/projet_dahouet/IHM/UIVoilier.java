@@ -29,7 +29,7 @@ public class UIVoilier extends JFrame {
 	public UIVoilier() {
 		setTitle("Enregistrement d'un voilier");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 539, 374);
 		Controller control = new Controller();
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -58,15 +58,15 @@ public class UIVoilier extends JFrame {
 		textField.setColumns(10);
 		
 		JComboBox comboBox = new JComboBox();
-		comboBox.setBounds(167, 74, 28, 20);
+		comboBox.setBounds(167, 74, 207, 20);
 		contentPane.add(comboBox);
 		
 		JComboBox comboBox_1 = new JComboBox();
-		comboBox_1.setBounds(167, 108, 28, 20);
+		comboBox_1.setBounds(167, 108, 207, 20);
 		contentPane.add(comboBox_1);
 		
 		JComboBox comboBox_2 = new JComboBox();
-		comboBox_2.setBounds(167, 148, 28, 20);
+		comboBox_2.setBounds(167, 148, 207, 20);
 		contentPane.add(comboBox_2);
 		
 		textField_1 = new JTextField();
@@ -87,7 +87,7 @@ public class UIVoilier extends JFrame {
 		contentPane.add(btnQuit);
 		
 		btnNew = new JButton("New");
-		btnNew.setBounds(297, 73, 89, 23);
+		btnNew.setBounds(384, 73, 89, 23);
 		contentPane.add(btnNew);
 		btnNew.addActionListener(new ActionListener() {
 			
