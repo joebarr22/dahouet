@@ -85,7 +85,7 @@ public class VoilierDAO {
 		try {
 			stm = c.prepareStatement("insert into voilier(ID_CLASSE,ID_PROPRIETAIRE,NO_VOILE,COEFFICIENT) VALUES(?,?,?,?)");
 			stm.setInt(1, classe.getIdClasse());
-			stm.setInt(2, proprio.getIdPersonne());
+			stm.setInt(2, proprio.getId());
 			stm.setString(3, voilier.getNom());
 			stm.setDouble(4, voilier.getCoef());
 			stm.executeUpdate();
