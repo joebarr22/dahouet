@@ -19,6 +19,7 @@ import com.david.projet_dahouet.controller.Controller;
 import com.david.projet_dahouet.model.Classe;
 import com.david.projet_dahouet.model.Proprietaire;
 import com.david.projet_dahouet.model.Serie;
+import com.david.projet_dahouet.model.Voilier;
 
 public class UIVoilier extends JFrame {
 
@@ -33,7 +34,7 @@ public class UIVoilier extends JFrame {
 	private JComboBox<Serie> comboBox_2;
 	private JComboBox<Classe> comboBox_3;
 	private JButton btnNewButton;
-
+	private JButton btnOk;
 	
 	public UIVoilier() {
 		setTitle("Enregistrement d'un voilier");
@@ -138,9 +139,19 @@ public class UIVoilier extends JFrame {
 		lblCoefficient.setBounds(10, 188, 95, 14);
 		contentPane.add(lblCoefficient);
 		
-		JButton btnOk = new JButton("OK");
-		btnOk.setBounds(82, 228, 46, 23);
+		btnOk = new JButton("OK");
+		btnOk.setBounds(82, 228, 61, 23);
 		contentPane.add(btnOk);
+		btnOk.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				Classe classe = (Classe) comboBox_3.getSelectedItem();
+				Proprietaire proprio = (Proprietaire) comboBox_1.getSelectedItem();
+				Voilier voilier = new Voilier(0,textField.getText(),Double.parseDouble(textField_1.getText()));
+				control.newVoilier(classe,proprio,voilier);
+			}
+		});
 		
 		JButton btnQuit = new JButton("Quit");
 		btnQuit.setBounds(226, 228, 61, 23);

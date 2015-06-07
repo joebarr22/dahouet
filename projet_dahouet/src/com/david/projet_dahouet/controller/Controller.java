@@ -10,6 +10,7 @@ import com.david.projet_dahouet.model.Classe;
 import com.david.projet_dahouet.model.Club;
 import com.david.projet_dahouet.model.Proprietaire;
 import com.david.projet_dahouet.model.Serie;
+import com.david.projet_dahouet.model.Voilier;
 
 public class Controller {
 	
@@ -52,5 +53,10 @@ public class Controller {
 		ArrayList<Classe> listClasse = new ArrayList<Classe>();
 		listClasse=VoilierDAO.getClasse(serie);
 		return listClasse;
+	}
+	
+	public void newVoilier(Classe classe, Proprietaire proprio, Voilier voilier){
+		VoilierDAO.newVoilier(voilier, classe, proprio);
+		
 	}
 }
