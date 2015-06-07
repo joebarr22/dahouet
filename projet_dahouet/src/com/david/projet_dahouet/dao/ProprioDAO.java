@@ -8,6 +8,43 @@ import com.david.projet_dahouet.model.Proprietaire;
 
 public class ProprioDAO {
 	private static Connection c;
+	
+	public static ArrayList<Proprietaire> getProprio() {
+
+		c = Connect.cConnect();
+
+		ArrayList<Proprietaire> proprioList = new ArrayList<>();
+		// test avec select
+		Statement stm;
+
+		try {
+			stm = c.createStatement();
+
+			String sql = "select * from personne inner join proprietaire on personne.ID_PERSONNE=proprietaire.ID_PROPRIETAIRE";
+			ResultSet rs = stm.executeQuery(sql);
+
+			while (rs.next()) {
+				int id =rs.getInt("ID_PERSONNE");
+				String nom = new String(rs.getString("NOM_PERSONNE"));
+				String prenom = new String(rs.getString("PRENOM"));
+				String mail = new String(rs.getString("MAIL"));
+				long tel = rs.getLong("NO_TELEPHONE");
+				String adresse = rs.getString("ADRESSE");
+				Proprietaire proprio = new Proprietaire(id,nom, mail, prenom, tel, adresse);
+				
+				
+			proprioList.add(proprio);
+			}
+			rs.close();
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return proprioList;
+
+	}
 
 	public static ArrayList<Club> getClub(){
 		c = Connect.cConnect();

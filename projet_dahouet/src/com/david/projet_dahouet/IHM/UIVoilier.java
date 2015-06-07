@@ -1,29 +1,38 @@
 package com.david.projet_dahouet.IHM;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-
-import java.awt.Label;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
+import java.util.ArrayList;
 
-import javax.swing.JLabel;
-import javax.swing.JTextField;
-import javax.swing.JComboBox;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
 
 import com.david.projet_dahouet.controller.Controller;
+import com.david.projet_dahouet.model.Classe;
+import com.david.projet_dahouet.model.Proprietaire;
+import com.david.projet_dahouet.model.Serie;
 
 public class UIVoilier extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField textField;
 	private JTextField textField_1;
-	private JButton btnNew;
+	private JComboBox<Proprietaire> comboBox_1;
+	private JComboBox<Serie> comboBox_2;
+	private JComboBox<Classe> comboBox_3;
+	private JButton btnNewButton;
 
 	
 	public UIVoilier() {
@@ -57,17 +66,68 @@ public class UIVoilier extends JFrame {
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setBounds(167, 74, 207, 20);
-		contentPane.add(comboBox);
-		
-		JComboBox comboBox_1 = new JComboBox();
-		comboBox_1.setBounds(167, 108, 207, 20);
+		comboBox_1 = new JComboBox<Proprietaire>();
+		comboBox_1.setBounds(167, 74, 207, 20);
 		contentPane.add(comboBox_1);
+		comboBox_1.removeAllItems();
+		ArrayList<Proprietaire> listProprio = control.proprioInit();
+
+		for (Proprietaire proprio : listProprio) {
+			comboBox_1.addItem(proprio);
+		}
+
+			btnNewButton = new JButton("Nouveau");
+			btnNewButton.setFont(new Font("Arial Black", Font.PLAIN, 11));
+			btnNewButton.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					control.fillProprio();
+					dispose();
+					
+				}
+			});
+
 		
-		JComboBox comboBox_2 = new JComboBox();
-		comboBox_2.setBounds(167, 148, 207, 20);
+		comboBox_2 = new JComboBox<Serie>();
+		comboBox_2.setBounds(167, 108, 207, 20);
 		contentPane.add(comboBox_2);
+		comboBox_2.removeAllItems();
+		ArrayList<Serie> listSerie = control.serieInit();
+
+		for (Serie serie : listSerie) {
+			
+			comboBox_2.addItem(serie);
+		}
+		comboBox_2.addItemListener(new ItemListener() {
+			
+			@Override
+			public void itemStateChanged(ItemEvent e) {
+				// TODO Auto-generated method stub
+				comboBox_3.removeAllItems();
+				Serie serie = (Serie) comboBox_2.getSelectedItem();
+				ArrayList<Classe> listClasse = control.classeInit(serie);
+				for (Classe classe : listClasse) {
+					
+
+					comboBox_3.addItem(classe);
+				}
+			}
+		});
+		
+	
+		comboBox_3 = new JComboBox<Classe>();
+		comboBox_3.setBounds(167, 148, 207, 20);
+		contentPane.add(comboBox_3);
+		comboBox_3.removeAllItems();
+		Serie serie = (Serie) comboBox_2.getSelectedItem();
+		ArrayList<Classe> listClasse = control.classeInit(serie);
+		for (Classe classe : listClasse) {
+			
+
+			comboBox_3.addItem(classe);
+
+		}
 		
 		textField_1 = new JTextField();
 		textField_1.setBounds(167, 185, 86, 20);
@@ -86,10 +146,10 @@ public class UIVoilier extends JFrame {
 		btnQuit.setBounds(226, 228, 61, 23);
 		contentPane.add(btnQuit);
 		
-		btnNew = new JButton("New");
-		btnNew.setBounds(384, 73, 89, 23);
-		contentPane.add(btnNew);
-		btnNew.addActionListener(new ActionListener() {
+		btnNewButton = new JButton("New");
+		btnNewButton.setBounds(384, 73, 89, 23);
+		contentPane.add(btnNewButton);
+		btnNewButton.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {

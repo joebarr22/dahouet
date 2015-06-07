@@ -47,4 +47,11 @@ public class Proprietaire extends Personne {
 		this.adresse = adresse;
 	}
 
+
+
+	@Override
+	public String toString() {
+		return id + " : " +  prénom + " "+ nom;
+	}
+
 }

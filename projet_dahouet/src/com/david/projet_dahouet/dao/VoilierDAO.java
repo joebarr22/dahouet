@@ -49,14 +49,14 @@ public class VoilierDAO {
 	public static ArrayList<Classe> getClasse(Serie serie) {
 		c = Connect.cConnect();
 		ArrayList<Classe> listeClasse = new ArrayList<>();
+		int IdSerie = serie.getIdSerie();
 		// test avec select
 		Statement stm;
 
 		try {
 			stm = c.createStatement();
 
-			String sql = "select * from classe INNER join serie on serie.ID_SERIE = classe.ID_SERIE where serie.ID_SERIE ='"
-					+ serie.getIdSerie() + "'";
+			String sql = "select * from classe INNER join serie on serie.ID_SERIE = classe.ID_SERIE where serie.ID_SERIE =" + IdSerie ;
 			ResultSet rs = stm.executeQuery(sql);
 
 			while (rs.next()) {
